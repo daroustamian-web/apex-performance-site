@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: daroustamian-web/apex-performance-site
+  branch: main
+  base_url: https://apex-performance.life
+  auth_endpoint: api/auth
+
+site_url: https://apex-performance.life
+display_url: https://apex-performance.life
+logo_url: https://apex-performance.life/assets/logo_full-320.png
+
+media_folder: "assets/blog"
+public_folder: "/assets/blog"
+
+collections:
+  - name: blog
+    label: Blog
+    folder: content/blog
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: "Publish Date", name: date, widget: datetime, picker_utc: false, date_format: "YYYY-MM-DD", time_format: false, default: "" }
+      - { label: Body, name: body, widget: markdown }
