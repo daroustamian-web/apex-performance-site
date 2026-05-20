@@ -622,204 +622,98 @@
 
 <!-- ════════════ TRANSFORMATIONS — real client before/after gallery ════════════ -->
 <style>
-  .transformations{padding:clamp(60px,8vw,100px) 20px;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .trans-mobile-head{max-width:780px;margin:0 auto 28px;text-align:center;display:none}
-  .trans-frame{position:relative;width:100%;max-width:760px;margin:0 auto;aspect-ratio:1066/1600;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.06)}
-  .trans-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none;pointer-events:none}
-  /* 9 photo slots overlaid into the baked grid frames of the design */
-  .trans-slot{position:absolute;border:0;padding:0;margin:0;background:#000;border-radius:4px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s ease,box-shadow .2s ease,opacity .4s ease;outline:none}
-  .trans-slot:hover{transform:scale(1.015);box-shadow:0 8px 22px rgba(200,16,46,0.45),0 0 0 1px rgba(255,255,255,0.18)}
-  .trans-slot:focus-visible{box-shadow:0 0 0 2px var(--blue),0 0 16px rgba(0,180,255,0.55)}
-  .trans-slot img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none;transition:opacity .35s ease}
-  .trans-slot.fading img{opacity:0}
-  /* Grid: 3 rows × 3 cols, positioned by percentage of the frame */
-  .trans-slot[data-i="0"]{left:7.5%;top:52.2%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="1"]{left:37.3%;top:52.2%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="2"]{left:67.1%;top:52.2%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="3"]{left:7.5%;top:61.7%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="4"]{left:37.3%;top:61.7%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="5"]{left:67.1%;top:61.7%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="6"]{left:7.5%;top:71.2%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="7"]{left:37.3%;top:71.2%;width:25.4%;height:7.9%}
-  .trans-slot[data-i="8"]{left:67.1%;top:71.2%;width:25.4%;height:7.9%}
-  /* Pagination dots */
-  .trans-pager{position:absolute;left:50%;bottom:21%;transform:translateX(-50%);display:flex;gap:8px;z-index:4;padding:8px 14px;background:rgba(8,8,12,0.55);border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.10)}
-  .trans-pager-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.32);border:0;cursor:pointer;padding:0;transition:background .25s ease,width .25s ease}
-  .trans-pager-dot:hover{background:rgba(255,255,255,0.55)}
-  .trans-pager-dot.active{background:var(--red);width:22px;border-radius:4px}
-  /* Mobile fallback: hide background image, render slots as a vertical scroll list */
-  .trans-mobile-scroll{display:none}
-  @media (max-width:760px){
-    .transformations{padding:clamp(50px,7vw,80px) 16px}
-    .trans-mobile-head{display:block}
-    .trans-frame{display:none}
-    .trans-mobile-scroll{display:flex;flex-direction:column;gap:10px;max-width:600px;margin:0 auto;height:580px;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;background:var(--bg-soft);border:1px solid var(--border);border-radius:14px;padding:10px;scrollbar-width:thin;scrollbar-color:var(--red) transparent}
-    .trans-mobile-scroll::-webkit-scrollbar{width:6px}
-    .trans-mobile-scroll::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--red),var(--blue));border-radius:6px}
-    .trans-mobile-card{flex:0 0 auto;scroll-snap-align:start;border-radius:8px;overflow:hidden;background:var(--bg-card);border:1px solid var(--border)}
-    .trans-mobile-card img{width:100%;height:auto;display:block}
+  .transformations{padding:clamp(80px,9vw,120px) 28px clamp(60px,8vw,100px);background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);scroll-margin-top:80px}
+  .trans-head{max-width:780px;margin:0 auto clamp(36px,5vw,56px);text-align:center}
+  .trans-head .eyebrow{display:inline-block;font-family:"Fraunces";font-weight:500;font-style:italic;font-size:13px;color:var(--red);letter-spacing:0.22em;text-transform:uppercase}
+  .trans-head h2{font-family:"Fraunces";font-weight:600;font-size:clamp(36px,5.4vw,76px);letter-spacing:-0.025em;line-height:1.04;margin:14px 0 18px;background:linear-gradient(180deg,#fff 0%,#9aa0aa 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .trans-head .lead{color:var(--muted);font-size:17px;max-width:56ch;margin:0 auto;line-height:1.5}
+  .trans-grid{max-width:1180px;margin:0 auto;columns:3;column-gap:18px}
+  .trans-grid figure{break-inside:avoid;margin:0 0 18px;border-radius:14px;overflow:hidden;background:var(--bg-card);border:1px solid var(--border);position:relative;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .trans-grid figure:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,0.45);border-color:rgba(200,16,46,0.4)}
+  .trans-grid figure::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue) 0%,#7d8dff 50%,var(--red) 100%);z-index:1;opacity:0.85}
+  .trans-grid figure img{width:100%;height:auto;display:block;user-select:none;-webkit-user-drag:none}
+  .trans-fade{position:absolute;left:0;right:0;bottom:0;height:200px;pointer-events:none;background:linear-gradient(180deg,transparent,var(--bg));display:none}
+  .transformations:not(.trans-expanded) .trans-grid-wrap{position:relative;max-height:1280px;overflow:hidden}
+  .transformations:not(.trans-expanded) .trans-fade{display:block}
+  .trans-cta-row{text-align:center;margin-top:36px}
+  .trans-expand-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:transparent;color:var(--fg);border:1px solid var(--border-strong);border-radius:999px;font-family:"DM Sans";font-weight:500;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+  .trans-expand-btn:hover{background:rgba(255,255,255,0.04);border-color:#fff;transform:translateY(-1px)}
+  .trans-expand-btn .chev{display:inline-block;transition:transform .25s ease}
+  .transformations.trans-expanded .trans-expand-btn .chev{transform:rotate(180deg)}
+  .transformations.trans-expanded .trans-grid-wrap{max-height:none}
+  .trans-count{display:inline-block;margin-left:6px;color:var(--dim);font-weight:400}
+  @media (max-width:1000px){
+    .trans-grid{columns:2;column-gap:14px}
+    .trans-grid figure{margin-bottom:14px;border-radius:12px}
+    .transformations:not(.trans-expanded) .trans-grid-wrap{max-height:1100px}
   }
-  @media (min-width:1100px){
-    .trans-frame{max-width:840px}
+  @media (max-width:640px){
+    .transformations{padding:clamp(50px,7vw,80px) 16px}
+    .trans-grid{columns:1;column-gap:0;max-width:520px}
+    .trans-grid figure{margin-bottom:12px;border-radius:12px}
+    .transformations:not(.trans-expanded) .trans-grid-wrap{max-height:1180px}
+    .trans-fade{height:160px}
   }
 </style>
 <section class="transformations" id="transformations">
-  <div class="trans-mobile-head reveal">
-    <div class="eyebrow center">Real people. Real results.</div>
-    <h2 class="title-h" style="text-align:center;margin-left:auto;margin-right:auto">Transformation.</h2>
+  <div class="trans-head reveal">
+    <span class="eyebrow">Real people. Real results.</span>
+    <h2>Transformation.</h2>
+    <p class="lead">Real clients. Real before-and-afters. No filters. No staged shots. Same body. Different protocol.</p>
   </div>
-  <div class="trans-frame reveal" id="transFrame" role="region" aria-label="Client transformation gallery">
-    <img class="trans-bg" src="./assets/transformation_bg.jpg" alt="Apex Performance Transformation — Real people. Real results. Real transformations." />
-    <button class="trans-slot" data-i="0" type="button" aria-label="Transformation 1"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="1" type="button" aria-label="Transformation 2"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="2" type="button" aria-label="Transformation 3"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="3" type="button" aria-label="Transformation 4"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="4" type="button" aria-label="Transformation 5"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="5" type="button" aria-label="Transformation 6"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="6" type="button" aria-label="Transformation 7"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="7" type="button" aria-label="Transformation 8"><img alt="Apex client before-and-after transformation" /></button>
-    <button class="trans-slot" data-i="8" type="button" aria-label="Transformation 9"><img alt="Apex client before-and-after transformation" /></button>
-    <div class="trans-pager" role="tablist" aria-label="Transformation pages">
-      <button class="trans-pager-dot active" data-page="0" type="button" aria-label="Page 1"></button>
-      <button class="trans-pager-dot" data-page="1" type="button" aria-label="Page 2"></button>
-      <button class="trans-pager-dot" data-page="2" type="button" aria-label="Page 3"></button>
+  <div class="trans-grid-wrap reveal">
+    <div class="trans-grid" role="list" aria-label="Client transformation gallery">
+      <figure role="listitem"><img src="./assets/transformations/01.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/02.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/03.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/04.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/05.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/06.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/07.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/08.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/09.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/10.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/11.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/12.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/13.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/14.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/15.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/16.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/17.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/18.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/19.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/20.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/21.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/22.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/23.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/24.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/25.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/26.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+      <figure role="listitem"><img src="./assets/transformations/27.jpg" loading="lazy" alt="Apex client transformation" /></figure>
     </div>
+    <div class="trans-fade" aria-hidden="true"></div>
   </div>
-  <!-- Mobile-only vertical scroll list (the design image is hidden under 760px) -->
-  <div class="trans-mobile-scroll reveal" aria-label="Client transformation gallery">
-    <figure class="trans-mobile-card"><img src="./assets/transformations/01.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/02.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/03.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/04.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/05.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/06.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/07.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/08.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/09.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/10.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/11.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/12.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/13.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/14.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/15.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/16.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/17.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/18.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/19.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/20.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/21.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/22.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/23.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/24.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/25.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/26.jpg" loading="lazy" alt="Apex client transformation" /></figure>
-    <figure class="trans-mobile-card"><img src="./assets/transformations/27.jpg" loading="lazy" alt="Apex client transformation" /></figure>
+  <div class="trans-cta-row">
+    <button class="trans-expand-btn" id="transExpandBtn" type="button" aria-expanded="false">
+      <span class="label">See all transformations</span><span class="count trans-count">(27)</span>
+      <svg class="chev" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
   </div>
 </section>
 <script>
   (function(){
-    const TOTAL = 27;
-    const PER_PAGE = 9;
-    const PAGES = Math.ceil(TOTAL / PER_PAGE);
-    const AUTO_MS = 6000;
-    const slots = Array.from(document.querySelectorAll('.trans-slot'));
-    const dots = Array.from(document.querySelectorAll('.trans-pager-dot'));
-    if (!slots.length) return;
-
-    const pad = n => String(n).padStart(2, '0');
-    const photoURL = i => `./assets/transformations/${pad(i + 1)}.jpg`;
-
-    // Preload page images so the swap is instant
-    const preloaded = new Set();
-    function preloadPage(p) {
-      for (let i = 0; i < PER_PAGE; i++) {
-        const idx = p * PER_PAGE + i;
-        if (idx >= TOTAL) break;
-        const url = photoURL(idx);
-        if (preloaded.has(url)) continue;
-        const img = new Image();
-        img.src = url;
-        preloaded.add(url);
+    const sec = document.getElementById('transformations');
+    const btn = document.getElementById('transExpandBtn');
+    if (!sec || !btn) return;
+    const label = btn.querySelector('.label');
+    btn.addEventListener('click', () => {
+      const isExpanded = sec.classList.toggle('trans-expanded');
+      btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      label.textContent = isExpanded ? 'Show fewer' : 'See all transformations';
+      if (!isExpanded) {
+        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }
-
-    let current = 0;
-    function setPage(p, withFade) {
-      current = p;
-      const apply = () => {
-        slots.forEach((slot, i) => {
-          const idx = p * PER_PAGE + i;
-          const img = slot.querySelector('img');
-          if (idx < TOTAL) {
-            img.src = photoURL(idx);
-            slot.style.visibility = 'visible';
-          } else {
-            slot.style.visibility = 'hidden';
-          }
-          slot.setAttribute('aria-label', `Transformation ${idx + 1} of ${TOTAL}`);
-        });
-        dots.forEach((d, i) => d.classList.toggle('active', i === p));
-        // Preload next page so it's ready when we cycle
-        preloadPage((p + 1) % PAGES);
-      };
-
-      if (withFade) {
-        slots.forEach(s => s.classList.add('fading'));
-        setTimeout(() => {
-          apply();
-          requestAnimationFrame(() => {
-            slots.forEach(s => s.classList.remove('fading'));
-          });
-        }, 240);
-      } else {
-        apply();
-      }
-    }
-
-    let autoTimer;
-    function startAuto() {
-      stopAuto();
-      autoTimer = setInterval(() => {
-        setPage((current + 1) % PAGES, true);
-      }, AUTO_MS);
-    }
-    function stopAuto() {
-      if (autoTimer) clearInterval(autoTimer);
-      autoTimer = null;
-    }
-
-    dots.forEach((d, i) => {
-      d.addEventListener('click', () => {
-        setPage(i, true);
-        startAuto();
-      });
     });
-
-    // Tap any slot to advance to the next page
-    slots.forEach(slot => {
-      slot.addEventListener('click', () => {
-        setPage((current + 1) % PAGES, true);
-        startAuto();
-      });
-    });
-
-    // Pause auto-cycle when user hovers the section
-    const frame = document.getElementById('transFrame');
-    if (frame) {
-      frame.addEventListener('mouseenter', stopAuto);
-      frame.addEventListener('mouseleave', startAuto);
-    }
-
-    // Pause when tab is hidden, resume when visible
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) stopAuto();
-      else startAuto();
-    });
-
-    preloadPage(0);
-    preloadPage(1);
-    setPage(0, false);
-    startAuto();
   })();
 </script>
 
