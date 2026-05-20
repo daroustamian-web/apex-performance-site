@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/blog/:slug(\\d{4}-\\d{2}-\\d{2}-.+)", "destination": "/blog/post.html?slug=:slug" }
+    { "source": "/blog/:slug", "destination": "/blog/post?slug=:slug" }
   ],
   "headers": [
     {
