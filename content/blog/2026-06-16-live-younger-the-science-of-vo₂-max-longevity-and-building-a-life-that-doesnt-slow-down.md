@@ -1,8 +1,10 @@
 ---
-title: "Live Younger: The Science of VO₂ Max, Longevity, and Building a Life
+title: " Live Younger: The Science of VO₂ Max, Longevity, and Building a Life
   That Doesn't Slow Down"
 date: 2026-06-16
 ---
+![](/assets/blog/e85f5918-b6f0-43a2-9ba7-13548826dd5a.png)
+
 # VO₂ Max: The Secret to Living Younger, Longer
 
 ## Stop Chasing Lifespan. Start Protecting Your Life Force.
@@ -10,8 +12,6 @@ date: 2026-06-16
 Everyone wants to live longer.
 
 **Truth Is Most People Don't Die Old. They Die Deconditioned.**
-
-![](/assets/blog/e85f5918-b6f0-43a2-9ba7-13548826dd5a.png)
 
 The better question is:
 
