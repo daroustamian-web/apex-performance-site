@@ -1,0 +1,14 @@
+{
+  "businessName": "Apex Performance & Recovery",
+  "address": "1626 Locust Avenue, Unit 1A, Bohemia, NY 11716",
+  "landline": "631-319-1786",
+  "cell": "631-730-0456",
+  "email": "kickfitbohemia@gmail.com",
+  "defaultBookingUrl": "https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi",
+  "serviceBookingUrls": {
+    "superhuman-protocol-long-island": "https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi",
+    "whole-body-cryotherapy-long-island": "https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi",
+    "hyperbaric-oxygen-therapy-long-island": "https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi",
+    "red-light-therapy-long-island": "https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi"
+  }
+}

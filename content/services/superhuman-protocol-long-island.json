@@ -1,0 +1,67 @@
+{
+  "slug": "superhuman-protocol-long-island",
+  "path": "/protocols/superhuman-protocol-long-island",
+  "pageClass": "superhuman",
+  "category": "The 3-Step Human Protocol",
+  "navLabel": "Superhuman Protocol",
+  "title": "Superhuman Protocol on Long Island | Apex Performance",
+  "metaDescription": "Experience the certified Superhuman Protocol at Apex Performance in Bohemia, Long Island. Combine PEMF, oxygen training and TheraLight 360 red light in one advanced performance and recovery protocol.",
+  "h1": "Long Island's <em>Superhuman Protocol</em> Experience",
+  "heroCopy": "Magnetism. Oxygen. Light. In the correct time sequence, every time. Apex Performance & Recovery is the first facility for advanced performance technology on Long Island to deliver the certified three-step protocol under one roof.",
+  "heroImage": "/assets/joe-superhuman-page-background.webp",
+  "pageBackground": "/assets/joe-superhuman-page-background.webp",
+  "pageBackgroundMobile": "/assets/joe-superhuman-page-background-640.webp",
+  "primaryCta": "Book Your Discovery Session",
+  "secondaryCta": "See the Sequence",
+  "secondaryHref": "#sequence",
+  "metrics": [
+    {"value":"3","label":"Technologies"},
+    {"value":"30–45","label":"Typical minutes"},
+    {"value":"1","label":"Deliberate sequence"},
+    {"value":"Apex","label":"Bohemia, Long Island"}
+  ],
+  "introKicker": "Put it in the correct order",
+  "introHeading": "Three technologies. One deliberate sequence.",
+  "introBody": [
+    "The Superhuman Protocol is a three-phase cycle engineered to prime your body with PEMF, flood it with oxygen, then amplify the results with TheraLight 360.",
+    "It is not random and it is not guesswork. Each phase is sequenced to support the next biological response."
+  ],
+  "topVideoId": "0fil3jbGjcU",
+  "topVideoTitle": "Dana White's Wellness Routine: Superhuman Protocol Demystified",
+  "sequence": [
+    {"number":"01 · Prime","title":"Magnetism","text":"Pulsed electromagnetic field therapy primes cellular activity and communication before you move."},
+    {"number":"02 · Activate","title":"Oxygen","text":"Exercise with oxygen training combines movement with concentrated oxygen to fuel working muscles and tissues."},
+    {"number":"03 · Amplify","title":"Light","text":"TheraLight 360 surrounds the body with red and near-infrared light to complete the sequence."}
+  ],
+  "systems": [
+    {"label":"Step 01 · PEMF","title":"Prime with magnetism","text":"Magnetic fields penetrate deep to stimulate cellular activity, improve circulation, and reduce inflammation. It is the primer that gets your body ready.","image":"/assets/04_hud_diagnostic.jpg","alt":"Apex cellular diagnostic visualization","specs":["PEMF activation","Non-invasive","Protocol phase 1"]},
+    {"label":"Step 02 · EWOT","title":"Activate with oxygen","text":"You breathe concentrated oxygen in a hyperbaric environment while you move. More oxygen. More energy. More delivery to muscles, brain, and tissues that need it most.","image":"/assets/eq_vo2max_ewot.png","alt":"Exercise with oxygen equipment at Apex","specs":["Oxygen-assisted exercise","Guided setup","Protocol phase 2"]},
+    {"label":"Step 03 · TheraLight 360","title":"Amplify with light","text":"Full-body red and near-infrared light penetrates your skin, reduces inflammation, accelerates recovery, and elevates performance at the cellular level.","image":"/assets/theralight-360-reference.jpg","alt":"TheraLight 360 full-body red light system","specs":["Full-body coverage","Red + near-infrared","Protocol phase 3"]}
+  ],
+  "benefits": [
+    {"title":"Energy & Focus","text":"Designed to help you recover faster and perform better."},
+    {"title":"Performance","text":"A complete sequence built around athletic and professional demands."},
+    {"title":"Cellular Repair","text":"Magnetism, oxygen, and light working in one ordered protocol."},
+    {"title":"Muscle & Joint Comfort","text":"A non-invasive protocol with no required downtime."},
+    {"title":"Stress & Inflammation","text":"Recovery support for demanding training and everyday life."},
+    {"title":"Healthy Aging","text":"A repeatable protocol for long-term health optimization."}
+  ],
+  "firstVisit": [
+    {"title":"Check-in & consultation","text":"We review your goals and prepare the sequence."},
+    {"title":"PEMF activation","text":"Your session begins with the magnetic-field phase."},
+    {"title":"Oxygen-assisted exercise","text":"Move at an appropriate level while breathing concentrated oxygen."},
+    {"title":"TheraLight 360","text":"Complete the protocol with full-body red light."},
+    {"title":"Decompression & next steps","text":"Review your experience and plan the right cadence."}
+  ],
+  "bottomVideoId": "-GBbwmlmNdE",
+  "bottomVideoTitle": "Superhuman Protocol uses PEMF, Exercise With Oxygen Therapy, and Red Light Therapy",
+  "faqs": [
+    {"question":"How long does a Superhuman Protocol session take?","answer":"The full protocol typically takes about 30–45 minutes from start to finish."},
+    {"question":"Do I need to be fit to do EWOT?","answer":"No. EWOT (Exercise with Oxygen Therapy) is suitable for most fitness levels. It's designed to improve oxygen delivery and boost energy, even for those not at peak fitness."},
+    {"question":"How often should I do the protocol?","answer":"Some clients come weekly, while others integrate it multiple times per week depending on recovery and performance goals."},
+    {"question":"Can I do individual therapies instead of the full protocol?","answer":"Yes. Red Light Therapy is available as a standalone option."},
+    {"question":"Is this therapy invasive or painful?","answer":"No, the Superhuman Protocol is non-invasive and painless. The therapies are designed to be comfortable, with no downtime required."}
+  ],
+  "ctaHeading": "Ready to experience the sequence?",
+  "ctaText": "Prime. Activate. Amplify. Connect with Apex Performance & Recovery in Bohemia to plan your first Superhuman Protocol session."
+}

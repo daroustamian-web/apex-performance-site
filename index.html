@@ -14,14 +14,16 @@
   "name": "Apex Performance & Recovery",
   "description": "Long Island's first human optimization center. Cryotherapy, hyperbaric oxygen, infrared, cold plunge and AI-tuned cardio sequenced into the ARTEMIS transformation protocol.",
   "url": "https://www.apex-performance.life",
-  "telephone": "+1-631-555-1234",
-  "image": "https://www.apex-performance.life/assets/01_archer_duality-1280.webp",
-  "logo": "https://www.apex-performance.life/assets/logo_full-640.webp",
+  "telephone": "+1-631-319-1786",
+  "email": "kickfitbohemia@gmail.com",
+  "image": "https://www.apex-performance.life/assets/joe-home-become-one-percent-1280.webp",
+  "logo": "https://www.apex-performance.life/assets/logo_mark-640.webp",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bohemia",
+    "streetAddress": "1626 Locust Avenue, Unit 1A",
     "addressLocality": "Bohemia",
     "addressRegion": "NY",
+    "postalCode": "11716",
     "addressCountry": "US"
   },
   "areaServed": [
@@ -44,8 +46,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="./assets/01_archer_duality-800.webp" imagesrcset="./assets/01_archer_duality-800.webp 800w, ./assets/01_archer_duality-1280.webp 1280w, ./assets/01_archer_duality-2000.webp 2000w" imagesizes="100vw" fetchpriority="high" />
-<link rel="preload" as="image" href="./assets/logo_full-320.webp" />
+<link rel="preload" as="image" href="./assets/joe-home-become-one-percent-800.webp" imagesrcset="./assets/joe-home-become-one-percent-800.webp 800w, ./assets/joe-home-become-one-percent-1280.webp 1280w, ./assets/joe-home-become-one-percent-1600.webp 1600w" imagesizes="100vw" fetchpriority="high" />
+<link rel="preload" as="image" href="./assets/logo_lockup-240.webp" />
 <link rel="preload" as="image" href="./assets/destination_x_splash_v2-1280.webp" imagesrcset="./assets/destination_x_splash_v2-800.webp 800w, ./assets/destination_x_splash_v2-1280.webp 1280w, ./assets/destination_x_splash_v2-1920.webp 1920w" imagesizes="(max-width:760px) 100vw, min(1280px, 100vw)" />
 
 <style>
@@ -110,6 +112,15 @@
   .nav .cta:hover{filter:brightness(1.1)}
   .nav .ext{margin-left:2px;padding:8px 14px;color:var(--fg);background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:999px;font-weight:500;font-size:13px;white-space:nowrap;transition:background .2s,border-color .2s}
   .nav .ext:hover{background:rgba(255,255,255,0.12);border-color:var(--border-strong)}
+  .nav-drop-home{position:relative}
+  .nav-drop-home>button{padding:8px 14px;color:var(--muted);border-radius:999px;font-weight:500;white-space:nowrap;transition:color .2s,background .2s}
+  .nav-drop-home>button::after{content:"";display:inline-block;width:6px;height:6px;margin:0 0 3px 8px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)}
+  .nav-drop-home>button:hover,.nav-drop-home>button:focus-visible{color:var(--fg);background:rgba(255,255,255,0.06)}
+  .nav-drop-menu{position:absolute;top:calc(100% + 12px);left:50%;width:330px;padding:10px;transform:translateX(-50%) translateY(-8px);opacity:0;visibility:hidden;background:rgba(10,10,14,.98);border:1px solid var(--border);border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.62);transition:opacity .2s,transform .2s,visibility .2s}
+  .nav-drop-home:hover .nav-drop-menu,.nav-drop-home:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .nav-drop-menu a{display:block;padding:11px 12px;border-radius:10px;color:var(--fg);font-size:13px;font-weight:500;line-height:1.25}
+  .nav-drop-menu a:hover,.nav-drop-menu a:focus-visible{background:rgba(0,180,255,.09)}
+  .nav-drop-menu small{display:block;margin-top:3px;color:var(--dim);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
   .nav-toggle{display:none;align-items:center;justify-content:center;width:36px;height:36px;margin-left:6px;padding:0;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s}
   .nav-toggle:hover{background:rgba(255,255,255,0.12);border-color:var(--border-strong)}
   .nav-toggle .bars{position:relative;width:16px;height:12px;display:block}
@@ -120,13 +131,14 @@
   .nav-toggle.is-open .bars span:nth-child(1){top:5px;transform:rotate(45deg)}
   .nav-toggle.is-open .bars span:nth-child(2){opacity:0}
   .nav-toggle.is-open .bars span:nth-child(3){top:5px;transform:rotate(-45deg)}
-  .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;z-index:49;background:rgba(10,10,12,0.96);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:6px;padding:96px 28px 40px;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s}
+  .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;z-index:49;background:rgba(10,10,12,0.96);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:6px;padding:96px 28px 40px;overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s}
   .mobile-menu.is-open{opacity:1;visibility:visible}
   .mobile-menu a{display:block;padding:18px 20px;font-family:"Fraunces";font-weight:500;font-size:26px;letter-spacing:-0.01em;color:var(--fg);border-bottom:1px solid var(--border);text-decoration:none}
   .mobile-menu a:last-child{border-bottom:0}
   .mobile-menu .m-sub{font-size:10.5px;letter-spacing:0.32em;text-transform:uppercase;color:var(--red);font-weight:500;display:block;margin-bottom:6px;font-family:"DM Sans"}
   @media (max-width:760px){
     .nav .link{display:none}
+    .nav-drop-home{display:none}
     .nav .ext{display:none}
     .nav-toggle{display:inline-flex}
     .nav{padding:5px 5px 5px 10px;gap:0;top:46px}
@@ -478,17 +490,26 @@
 <!-- ══════════════════════ NAV ══════════════════════ -->
 <nav class="nav" aria-label="Primary">
   <a href="#top" aria-label="Apex home"><picture>
-    <source type="image/webp" srcset="./assets/logo_full-320.webp 1x, ./assets/logo_full-640.webp 2x" />
-    <img class="brand-logo" src="./assets/logo_full-320.png" width="170" height="60" alt="Apex Performance &amp; Recovery" decoding="async" />
+    <source type="image/webp" srcset="./assets/logo_lockup-240.webp 1x, ./assets/logo_lockup-480.webp 2x" />
+    <img class="brand-logo" src="./assets/logo_lockup-240.png" width="200" height="40" alt="Apex Performance &amp; Recovery" decoding="async" />
   </picture></a>
   <a class="link" href="#how">How It Works</a>
   <a class="link" href="#transformations">Transformations</a>
-  <a class="link" href="#results">Results</a>
+  <div class="nav-drop-home">
+    <button type="button" aria-haspopup="true">Protocols</button>
+    <div class="nav-drop-menu">
+      <a href="/protocols/superhuman-protocol-long-island">Superhuman Protocol<small>Three-step human protocol</small></a>
+      <a href="/recovery/whole-body-cryotherapy-long-island">Whole-Body Cryotherapy<small>Recovery</small></a>
+      <a href="/recovery/hyperbaric-oxygen-therapy-long-island">Hyperbaric Oxygen + Dry Dive<small>Recovery · includes Dry Dive Training</small></a>
+      <a href="/recovery/hyperbaric-oxygen-therapy-long-island#dry-dive-training">Dry Dive Training<small>Same HBOT page · deep link</small></a>
+      <a href="/recovery/red-light-therapy-long-island">Red Light Therapy<small>Three advanced systems</small></a>
+      <a href="https://apexperformance.medwaveproviders.com/" target="_blank" rel="noopener">MedWave + HyperVibe ↗<small>External provider</small></a>
+    </div>
+  </div>
   <a class="link" href="#equipment">Technology</a>
-  <a class="link" href="#pricing">Pricing</a>
   <a class="link" href="/blog">Blog</a>
   <a class="ext" href="https://kickfit.club/" target="_blank" rel="noopener">Kickfit ↗</a>
-  <a class="cta" href="#book">Risk-Free First Session →</a>
+  <a class="cta" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Risk-Free First Session →</a>
   <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
   </button>
@@ -498,19 +519,24 @@
   <a href="#how"><span class="m-sub">01</span>How It Works</a>
   <a href="#transformations"><span class="m-sub">02</span>Transformations</a>
   <a href="#results"><span class="m-sub">03</span>Results</a>
+  <a href="/protocols/superhuman-protocol-long-island"><span class="m-sub">Protocol</span>Superhuman Protocol</a>
+  <a href="/recovery/whole-body-cryotherapy-long-island"><span class="m-sub">Recovery</span>Whole-Body Cryotherapy</a>
+  <a href="/recovery/hyperbaric-oxygen-therapy-long-island"><span class="m-sub">Recovery</span>Hyperbaric Oxygen + Dry Dive</a>
+  <a href="/recovery/red-light-therapy-long-island"><span class="m-sub">Recovery</span>Red Light Therapy</a>
+  <a href="https://apexperformance.medwaveproviders.com/" target="_blank" rel="noopener"><span class="m-sub">External provider</span>MedWave + HyperVibe ↗</a>
   <a href="#equipment"><span class="m-sub">04</span>Technology</a>
   <a href="#award"><span class="m-sub">05</span>Best of Long Island</a>
   <a href="#pricing"><span class="m-sub">06</span>Pricing</a>
   <a href="/blog"><span class="m-sub">07</span>Blog</a>
   <a href="https://kickfit.club/" target="_blank" rel="noopener"><span class="m-sub">↗</span>Kickfit</a>
-  <a href="#book" style="margin-top:8px;background:linear-gradient(135deg,var(--red),#7d0a1d);color:#fff;border-radius:14px;text-align:center;border-bottom:0"><span class="m-sub" style="color:#fff">↦</span>Risk-Free First Session</a>
+  <a href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener" style="margin-top:8px;background:linear-gradient(135deg,var(--red),#7d0a1d);color:#fff;border-radius:14px;text-align:center;border-bottom:0"><span class="m-sub" style="color:#fff">↦</span>Risk-Free First Session</a>
 </div>
 
 <!-- ════════════ CUT I — HERO Archer (CSS-animated overlay on 2K static) ════════════ -->
 <section class="cut tall hero-anim" id="top">
   <picture>
-    <source type="image/webp" srcset="./assets/01_archer_duality-800.webp 800w, ./assets/01_archer_duality-1280.webp 1280w, ./assets/01_archer_duality-2000.webp 2000w" sizes="100vw" />
-    <img class="hero-bg" src="./assets/01_archer_duality-1600.jpg" width="2560" height="1440" alt="Apex Performance &amp; Recovery" fetchpriority="high" decoding="async" />
+    <source type="image/webp" srcset="./assets/joe-home-become-one-percent-800.webp 800w, ./assets/joe-home-become-one-percent-1280.webp 1280w, ./assets/joe-home-become-one-percent-1600.webp 1600w" sizes="100vw" />
+    <img class="hero-bg" src="./assets/joe-home-become-one-percent.jpg" width="1600" height="903" alt="Become the one percent at Apex Performance and Recovery" fetchpriority="high" decoding="async" />
   </picture>
   <div class="hero-glow-blue"></div>
   <div class="hero-glow-red"></div>
@@ -552,7 +578,7 @@
     <h1 class="display">Train smarter.<br/>Recover deeper. <em>Transform completely.</em></h1>
     <p class="lead center">Long Island&rsquo;s first Human Optimization Center. Lose fat, recover faster, and rebuild energy with the A.R.T.E.M.I.S transformation system — hyperbaric oxygen, cryotherapy, infrared, cold plunge, and AI-tuned cardio, sequenced for cellular change.</p>
     <div class="ctas center">
-      <a class="btn btn-primary" href="#book">Start Your First Session — Risk-Free
+      <a class="btn btn-primary" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Start Your First Session — Risk-Free
         <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a class="btn btn-ghost" href="#how">See how it works</a>
@@ -614,7 +640,7 @@
     <li><span class="how-step-num">03 · Custom Protocol</span><h3 class="how-step-h">We sequence the system.</h3><p class="how-step-p">Your A.R.T.E.M.I.S protocol — modalities, frequency, intensity — calibrated to your physiology and your timeline.</p></li>
   </ol>
   <div class="how-cta-row">
-    <a class="btn btn-primary" href="#book">Book Your Body Scan
+    <a class="btn btn-primary" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Book Your Body Scan
       <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -928,7 +954,7 @@
   <div class="title-inner center reveal">
     <p class="lead center" style="margin-bottom:24px">Science-backed. Physician-guided. Compounded for purity. Quality you can trust. Stack with Apex protocols for accelerated metabolism, appetite control, and recovery &mdash; or run them stand-alone under medical supervision.</p>
     <div class="ctas center">
-      <a class="btn btn-primary" href="#book">Begin Transformation
+      <a class="btn btn-primary" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Begin Transformation
         <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -1041,7 +1067,7 @@
         <li>2–3× per week</li>
       </ul>
       <div class="results"><strong>Best for</strong> · busy schedules, first-time clients, maintenance, budget-friendly</div>
-      <a class="pick" href="#book">Start Express →</a>
+      <a class="pick" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Start Express →</a>
     </article>
 
     <article class="price compact featured">
@@ -1057,7 +1083,7 @@
         <li>3× per week</li>
       </ul>
       <div class="results"><strong>Best for</strong> · clients ready for more, weight management, body contouring</div>
-      <a class="pick" href="#book">Start Core →</a>
+      <a class="pick" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Start Core →</a>
     </article>
 
     <article class="price compact">
@@ -1073,7 +1099,7 @@
         <li>2–3× per week</li>
       </ul>
       <div class="results"><strong>Best for</strong> · serious fat loss, body transformation, plateau breakers</div>
-      <a class="pick" href="#book">Start Elite →</a>
+      <a class="pick" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Start Elite →</a>
     </article>
 
     <article class="price compact">
@@ -1090,7 +1116,7 @@
         <li>1–2× per week</li>
       </ul>
       <div class="results"><strong>Best for</strong> · maximum results, full-body optimization, high-level clients</div>
-      <a class="pick" href="#book">Start Ultimate →</a>
+      <a class="pick" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Start Ultimate →</a>
     </article>
 
     <article class="price compact">
@@ -1105,7 +1131,7 @@
         <li>1–2× per week</li>
       </ul>
       <div class="results"><strong>Best for</strong> · recovery, inflammation, performance, detox, injury support</div>
-      <a class="pick" href="#book">Start Regen →</a>
+      <a class="pick" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Start Regen →</a>
     </article>
 
     <article class="price compact featured">
@@ -1124,7 +1150,7 @@
         <li>1× per week</li>
       </ul>
       <div class="results"><strong>Best for</strong> · elite transformation, peak performance, complete optimization</div>
-      <a class="pick" href="#book">Start Apex →</a>
+      <a class="pick" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Start Apex →</a>
     </article>
   </div>
 
@@ -1146,10 +1172,12 @@
     <h1 class="display">Begin your <em>protocol.</em></h1>
     <p class="lead center">Risk-free first session. If you don&rsquo;t love it, you don&rsquo;t pay. Bohemia, Long Island.</p>
     <div class="ctas center">
-      <a class="btn btn-primary" href="tel:+16315551234">Call Apex
+      <a class="btn btn-primary" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener">Book Online
         <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a class="btn btn-ghost" href="mailto:hello@apexperformancerecovery.com">Email us</a>
+      <a class="btn btn-ghost" href="tel:+16313191786">Call 631-319-1786</a>
+      <a class="btn btn-ghost" href="tel:+16317300456">Cell 631-730-0456</a>
+      <a class="btn btn-ghost" href="mailto:kickfitbohemia@gmail.com">Email us</a>
     </div>
   </div>
 </section>
@@ -1158,11 +1186,11 @@
 <footer class="foot">
   <div class="foot-inner">
     <picture>
-      <source type="image/webp" srcset="./assets/logo_full-320.webp 1x, ./assets/logo_full-640.webp 2x" />
-      <img class="logo-foot" src="./assets/logo_full-320.png" width="170" height="60" alt="Apex Performance &amp; Recovery" loading="lazy" decoding="async" />
+      <source type="image/webp" srcset="./assets/logo_lockup-240.webp 1x, ./assets/logo_lockup-480.webp 2x" />
+      <img class="logo-foot" src="./assets/logo_lockup-240.png" width="200" height="40" alt="Apex Performance &amp; Recovery" loading="lazy" decoding="async" />
     </picture>
-    <div>Bohemia, Long Island, NY · Powered by A.R.T.E.M.I.S</div>
-    <div>© 2026 · <a href="mailto:hello@apexperformancerecovery.com">Contact</a></div>
+    <div>1626 Locust Avenue, Unit 1A · Bohemia, NY 11716</div>
+    <div>© 2026 · <a href="tel:+16313191786">631-319-1786</a> · <a href="tel:+16317300456">631-730-0456</a> · <a href="mailto:kickfitbohemia@gmail.com">Email</a></div>
   </div>
 </footer>
 
@@ -1317,7 +1345,7 @@
 <div class="td-pop" id="tdPop" role="dialog" aria-modal="true" aria-label="Red-light therapy test drive offer">
   <div class="td-pop-card">
     <button class="td-pop-close" id="tdPopClose" aria-label="Close">✕</button>
-    <a class="td-pop-link" id="tdPopLink" href="#book" aria-label="Reserve your test drive">
+    <a class="td-pop-link" id="tdPopLink" href="https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi" target="_blank" rel="noopener" aria-label="Reserve your test drive">
       <div class="td-pop-stage">
         <img id="tdPopImg1" src="./assets/popup_stage1.jpg" alt="Try it once. You'll get it." />
         <img id="tdPopImg2" src="./assets/popup_stage2.jpg" alt="Red-light therapy test drive — 1 session $47, 4 sessions $199" />

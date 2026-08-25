@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "node scripts/build-service-pages.mjs",
+    "build:services": "node scripts/build-service-pages.mjs",
+    "check": "node scripts/check-site.mjs"
+  },
   "engines": {
     "node": ">=18"
   }
