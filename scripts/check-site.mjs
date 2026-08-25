@@ -184,6 +184,8 @@ for (const route of expected) {
   }
 }
 for (const slug of [
+  'apex-max-contour-discovery',
+  'infrabaldan-discovery',
   'whole-body-cryotherapy-long-island',
   'hyperbaric-oxygen-therapy-long-island',
 ]) {

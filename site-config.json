@@ -8,6 +8,8 @@
   "boulevardLocationId": "71529583-1475-4cac-9ddd-40ba388ddc41",
   "defaultBookingPath": "/cart/menu",
   "serviceBookingPaths": {
+    "apex-max-contour-discovery": "/cart/menu/Trial Services/s_bd8bb4ef-447b-467d-8352-739911bfad4e",
+    "infrabaldan-discovery": "/cart/menu/Trial Services/s_37620857-b9dc-45e9-a57d-cbb3cb214d3c",
     "superhuman-protocol-long-island": "/cart/menu/Trial Services",
     "whole-body-cryotherapy-long-island": "/cart/menu/Trial Services/s_1fba1b7a-3d62-4b53-b792-adf7bc09fe49",
     "hyperbaric-oxygen-therapy-long-island": "/cart/menu/Trial Services/s_e96d1c01-dc64-4a57-aaf6-a9208f774b3e",

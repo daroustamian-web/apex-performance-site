@@ -32,6 +32,8 @@ collections:
             name: serviceBookingPaths
             widget: object
             fields:
+              - { label: APEX MAX Contour Discovery, name: apex-max-contour-discovery, widget: string, required: false, hint: "Verified public Boulevard path for the exact Discovery service." }
+              - { label: InfraBaldan Discovery, name: infrabaldan-discovery, widget: string, required: false, hint: "Verified public Boulevard path for the exact Discovery service." }
               - { label: Superhuman Protocol, name: superhuman-protocol-long-island, widget: string, required: false, hint: "Use Boulevard's path from Sharing Options → Link via your website." }
               - { label: Whole-Body Cryotherapy, name: whole-body-cryotherapy-long-island, widget: string, required: false, hint: "Use Boulevard's path from Sharing Options → Link via your website." }
               - { label: Hyperbaric Oxygen, name: hyperbaric-oxygen-therapy-long-island, widget: string, required: false, hint: "Use Boulevard's path from Sharing Options → Link via your website." }
