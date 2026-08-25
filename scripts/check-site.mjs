@@ -59,7 +59,8 @@ for (const route of expected) {
 }
 
 const allText = [
-  'index.html', 'site-config.json', 'admin/config.yml', 'comp-pages.js', 'comp-pages.css',
+  'index.html', 'blog/index.html', 'blog/post.html', 'site-config.json', 'admin/config.yml',
+  'boulevard-booking.js', 'comp-pages.js', 'comp-pages.css',
   ...expected.map(route => path.join(...route.split('/').filter(Boolean), 'index.html')),
 ].map(read).join('\n');
 
@@ -163,27 +164,99 @@ if (!medWaveRedirect || medWaveRedirect.destination !== medWaveUrl || medWaveRed
 }
 
 const config = JSON.parse(read('site-config.json'));
-const bookingUrl = 'https://link.careconnectinc.com/widget/booking/JNKhk4AgtMk5LJVNSMMi';
-if (config.defaultBookingUrl !== bookingUrl) {
-  fail(`Default booking URL must be ${bookingUrl}`);
+const boulevardBusinessId = config.boulevardBusinessId;
+const boulevardLocationId = config.boulevardLocationId;
+const expectedBookingPaths = config.serviceBookingPaths || {};
+const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const bookingPathPattern = /^\/cart\/menu(?:\/[^?#]+)?$/;
+const exactServicePathPattern = /\/s_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+if (!uuid.test(boulevardBusinessId || '')) fail('Boulevard business ID must be a UUID');
+if (!uuid.test(boulevardLocationId || '')) fail('Boulevard location ID must be a UUID');
+if (config.defaultBookingPath !== '/cart/menu') {
+  fail('Default Boulevard path must open the general menu');
 }
-for (const key of Object.keys(config.serviceBookingUrls || {})) {
-  if (config.serviceBookingUrls[key] !== bookingUrl) {
-    fail(`Booking URL for ${key} must be ${bookingUrl}`);
+for (const route of expected) {
+  const slug = route.split('/').filter(Boolean).at(-1);
+  const bookingPath = expectedBookingPaths[slug];
+  if (typeof bookingPath !== 'string' || !bookingPathPattern.test(bookingPath)) {
+    fail(`Boulevard booking path is invalid for ${slug}`);
   }
 }
+for (const slug of [
+  'whole-body-cryotherapy-long-island',
+  'hyperbaric-oxygen-therapy-long-island',
+]) {
+  if (!exactServicePathPattern.test(expectedBookingPaths[slug] || '')) {
+    fail(`Boulevard booking path must target an exact service for ${slug}`);
+  }
+}
+
+const bookingScript = read('boulevard-booking.js');
+for (const marker of [
+  'https://static.joinboulevard.com/injector.min.js',
+  'client.init({ businessId: BUSINESS_ID })',
+  'client.openBookingWidget(',
+  'newWindow: false',
+  'event.stopImmediatePropagation()',
+  'loadFailed = true',
+  "win.fetch('/site-config.json'",
+  'Promise.race([configurationRequest, configurationTimeout])',
+  'SERVICE_PATHS[service]',
+]) {
+  if (!bookingScript.includes(marker)) fail(`Boulevard loader missing ${marker}`);
+}
+
+const packageJson = JSON.parse(read('package.json'));
+if (!packageJson.scripts?.build?.includes('scripts/check-site.mjs')) {
+  fail('Production build must run the site checks');
+}
+
+const publicPages = new Map([
+  ['Homepage', home],
+  ['Blog index', read('blog/index.html')],
+  ['Blog post', read('blog/post.html')],
+]);
 for (const route of expected) {
   const file = path.join(...route.split('/').filter(Boolean), 'index.html');
   const html = read(file);
-  if (!html.includes(bookingUrl)) fail(`${route}: booking calendar URL missing from page`);
+  publicPages.set(route, html);
+  const slug = route.split('/').filter(Boolean).at(-1);
+  const bookingPath = expectedBookingPaths[slug];
+  if (!html.includes(`data-boulevard-path="${bookingPath}"`)) {
+    fail(`${route}: Boulevard booking path missing from page`);
+  }
+  if (!html.includes(`data-boulevard-service="${slug}"`)) {
+    fail(`${route}: Boulevard service key missing from page`);
+  }
   if (!html.includes('Book Now') && !html.includes('Book Online') && !html.includes('Book Your')) {
     fail(`${route}: no Book CTA text found`);
   }
 }
-const homeHtml = read('index.html');
-if (!homeHtml.includes(bookingUrl)) fail('Homepage missing booking calendar URL');
-if ((homeHtml.match(new RegExp(bookingUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length < 3) {
-  fail('Homepage should wire multiple Book CTAs to the calendar');
+
+for (const [pageName, html] of publicPages) {
+  if (!html.includes('<script src="/boulevard-booking.js"></script>')) {
+    fail(`${pageName}: global Boulevard loader missing`);
+  }
+  if (/careconnectinc\.com/i.test(html)) fail(`${pageName}: retired CareConnect link remains`);
+  for (const anchor of html.matchAll(/<a\b[^>]*href="#book-now"[^>]*>/g)) {
+    if (/\btarget=/.test(anchor[0])) fail(`${pageName}: Boulevard CTA opens a new tab`);
+  }
+}
+
+if ((home.match(/href="#book-now"/g) || []).length < 3) {
+  fail('Homepage should wire multiple Book CTAs to Boulevard');
+}
+const popupBookingAnchor = home.match(/<a\b[^>]*id="tdPopLink"[^>]*>/)?.[0] || '';
+if (!popupBookingAnchor.includes('data-boulevard-service="red-light-therapy-long-island"')) {
+  fail('Homepage red-light test drive must follow the configured Boulevard service');
+}
+const popupFallbackPath = popupBookingAnchor.match(/data-boulevard-path="([^"]+)"/)?.[1];
+if (!popupFallbackPath || !bookingPathPattern.test(popupFallbackPath)) {
+  fail('Homepage red-light test drive must retain a valid Boulevard fallback path');
+}
+if (/careconnectinc\.com/i.test(allText)) {
+  fail('Retired CareConnect booking URL remains in public site source');
 }
 
 if (failures.length) {
@@ -191,5 +264,5 @@ if (failures.length) {
   process.exit(1);
 }
 console.log(
-  `Site checks passed: ${expected.length} comp-driven service pages, transparent logos, unique metadata, valid schema, MedWave handoff, navigation, sitemap, contact data, and booking placeholders.`,
+  `Site checks passed: ${expected.length} comp-driven service pages, transparent logos, unique metadata, valid schema, MedWave handoff, navigation, sitemap, contact data, and Boulevard booking.`,
 );

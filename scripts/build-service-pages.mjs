@@ -48,24 +48,23 @@ const stripTags = v => String(v ?? '').replace(/<[^>]+>/g, '');
 const json = v => JSON.stringify(v).replace(/</g, '\\u003c');
 const telHref = v => String(v).replace(/\D/g, '');
 const pathParts = v => v.split('/').filter(Boolean);
-const bookingUrl = (slug) => {
-  const per = config.serviceBookingUrls?.[slug];
+const bookingPath = (slug) => {
+  const per = config.serviceBookingPaths?.[slug];
   if (per && String(per).trim()) return String(per).trim();
-  if (config.defaultBookingUrl && String(config.defaultBookingUrl).trim()) {
-    return String(config.defaultBookingUrl).trim();
+  if (config.defaultBookingPath && String(config.defaultBookingPath).trim()) {
+    return String(config.defaultBookingPath).trim();
   }
   return '';
 };
-const bookHrefAttrs = (url) => {
-  if (!url) return 'href="#contact"';
-  if (/^https?:\/\//i.test(url)) return `href="${e(url)}" target="_blank" rel="noopener"`;
-  return `href="${e(url)}"`;
+const bookHrefAttrs = (path, slug) => {
+  if (!path) return 'href="#book-now"';
+  return `href="#book-now" data-boulevard-service="${e(slug)}" data-boulevard-path="${e(path)}"`;
 };
 
 /* ---------------------------------------------------------------- chrome -- */
 
 function nav(active) {
-  const book = bookingUrl(active);
+  const book = bookingPath(active);
   const links = services.map((s, i) =>
     `<a href="${e(s.path)}"${s.slug === active ? ' aria-current="page"' : ''}>` +
     `<span class="drop-num">0${i + 1}</span><span><strong>${e(s.navLabel)}</strong>` +
@@ -81,16 +80,16 @@ function nav(active) {
 <nav class="site-nav" aria-label="Primary"><div class="nav-inner">
 <a class="site-logo" href="/" aria-label="Apex Performance &amp; Recovery home"><picture><source type="image/webp" srcset="/assets/logo_lockup-240.webp 1x, /assets/logo_lockup-480.webp 2x"><img src="/assets/logo_lockup-240.png" width="200" height="40" alt="Apex Performance &amp; Recovery"></picture></a>
 <div class="desktop-links"><a href="/">Home</a><div class="nav-drop"><button type="button" aria-haspopup="true" aria-expanded="false">Protocols</button><div class="drop-menu">${links}</div></div><a href="/#equipment">Technology</a><a href="/blog">Blog</a></div>
-<div class="nav-contact"><a href="tel:+1${telHref(config.landline)}">Call ${e(config.landline)}</a><a class="nav-cta" ${bookHrefAttrs(book)}>Book Now</a></div>
+<div class="nav-contact"><a href="tel:+1${telHref(config.landline)}">Call ${e(config.landline)}</a><a class="nav-cta" ${bookHrefAttrs(book, active)}>Book Now</a></div>
 <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="svc-menu"><span></span></button>
 </div></nav>
-<div class="mobile-menu" id="svc-menu" data-mobile-menu aria-hidden="true"><a href="/">Home</a><span class="mobile-label">Protocols &amp; Recovery</span>${mobile}<span class="mobile-label">More</span><a href="/blog">Blog</a><a ${bookHrefAttrs(book)}>Book Online</a><a href="#contact">Contact Apex</a></div>`;
+<div class="mobile-menu" id="svc-menu" data-mobile-menu aria-hidden="true"><a href="/">Home</a><span class="mobile-label">Protocols &amp; Recovery</span>${mobile}<span class="mobile-label">More</span><a href="/blog">Blog</a><a ${bookHrefAttrs(book, active)}>Book Online</a><a href="#contact">Contact Apex</a></div>`;
 }
 
 function footer(data) {
-  const book = bookingUrl(data.slug);
+  const book = bookingPath(data.slug);
   const bookBtn = book
-    ? `<a class="btn btn-red" ${bookHrefAttrs(book)}>Book Online</a>`
+    ? `<a class="btn btn-red" ${bookHrefAttrs(book, data.slug)}>Book Online</a>`
     : '';
   return `<footer class="site-footer" id="contact"><div class="footer-inner">
 <div class="footer-cta"><h2>${e(data.ctaHeading)}</h2><p>${e(data.ctaText)}</p>
@@ -301,9 +300,9 @@ function page(data) {
   if (enhanced) {
     // Single full-page enhanced image + live FAQ (+ MedWave embed if any)
     const embed = (compsSource[data.slug]?.bands || []).find(b => b.type === 'embed');
-    const book = bookingUrl(data.slug);
+    const book = bookingPath(data.slug);
     const bookStrip = data.primaryCta
-      ? `<section class="cband cband-book"><div class="book-strip"><a class="btn btn-red" ${bookHrefAttrs(book || '#contact')}>${e(data.primaryCta)}</a><a class="btn btn-ghost" href="tel:+1${telHref(config.landline)}">Call ${e(config.landline)}</a></div></section>`
+      ? `<section class="cband cband-book"><div class="book-strip"><a class="btn btn-red" ${bookHrefAttrs(book, data.slug)}>${e(data.primaryCta)}</a><a class="btn btn-ghost" href="tel:+1${telHref(config.landline)}">Call ${e(config.landline)}</a></div></section>`
       : '';
     body = [
       enhanced,
@@ -339,6 +338,7 @@ function page(data) {
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/comp-pages.css">${preload}
+<script src="/boulevard-booking.js"></script>
 <script type="application/ld+json">${schema(data)}</script></head>
 <body class="comp-page page-${e(data.pageClass)}" data-service="${e(data.slug)}">
 <a class="skip-link" href="#main">Skip to content</a>
