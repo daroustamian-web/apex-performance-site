@@ -1,0 +1,66 @@
+{
+  "slug": "hyperbaric-oxygen-therapy-long-island",
+  "path": "/recovery/hyperbaric-oxygen-therapy-long-island",
+  "pageClass": "hbot",
+  "category": "1.6 ATA Hyperbaric Oxygen",
+  "navLabel": "Hyperbaric Oxygen + Dry Dive",
+  "title": "1.6 ATA Hyperbaric Oxygen Therapy Long Island | Apex",
+  "metaDescription": "Experience supervised 1.6 ATA hyperbaric oxygen sessions at Apex Performance & Recovery in Bohemia. Explore recovery, wellness and Dry Dive Training on Long Island.",
+  "h1": "1.6 ATA Hyperbaric Oxygen Sessions in <em>Bohemia, Long Island</em>",
+  "heroCopy": "Step into controlled pressure. Breathe concentrated oxygen. Elevate recovery, performance, and overall wellness in a supervised Apex session.",
+  "heroImage": "/assets/joe-hbot-page-background.webp",
+  "pageBackground": "/assets/joe-hbot-page-background.webp",
+  "pageBackgroundMobile": "/assets/joe-hbot-page-background-640.webp",
+  "primaryCta": "Book Your First Dive",
+  "secondaryCta": "Explore Dry Dive Training",
+  "secondaryHref": "#dry-dive-training",
+  "metrics": [
+    {"value":"1.6 ATA","label":"Session pressure"},
+    {"value":"60–90","label":"Typical minutes"},
+    {"value":"O₂","label":"Concentrated oxygen"},
+    {"value":"1:1","label":"Supervised setup"}
+  ],
+  "introKicker": "What is hyperbaric oxygen?",
+  "introHeading": "Controlled pressure. Concentrated oxygen.",
+  "introBody": [
+    "Hyperbaric Oxygen Therapy (HBOT) involves breathing oxygen in a pressurized environment up to 1.6 ATA. This allows the body to absorb significantly more oxygen, accelerating repair, reducing inflammation, and supporting overall wellness.",
+    "Apex sessions take place in a comfortable soft-shell chamber with trained guidance before, during, and after your dive."
+  ],
+  "topVideoId": "snjXiL2P9h8",
+  "topVideoTitle": "OxyFlow U-Shape Door Hyperbaric Chamber - Comfort Meets Accessibility",
+  "sequenceHeading": "Your chamber experience",
+  "sequence": [
+    {"number":"01 · Prepare","title":"Safety brief & orientation","text":"We review your health history, explain the chamber, and answer your questions."},
+    {"number":"02 · Pressurize","title":"Compression & oxygen","text":"Pressure increases gradually while you relax and breathe concentrated oxygen."},
+    {"number":"03 · Return","title":"Decompression & next steps","text":"Pressure returns gradually, then we review hydration and follow-up recommendations."}
+  ],
+  "systems": [
+    {"label":"The chamber experience","title":"Comfort meets accessibility","text":"Relax in the soft-shell chamber as pressure gradually increases. You may feel your ears equalize—similar to an airplane. Most clients read, listen, watch, or rest during the session.","image":"/assets/hyperbaric_actual.jpeg","alt":"Apex hyperbaric oxygen chamber in Bohemia","specs":["1.6 ATA","60–90 minutes","Supervised"]},
+    {"id":"dry-dive-training","label":"Dry Dive Training","title":"Pressure. Practice. Perform. Without the water.","text":"Build confidence, improve equalization, and adapt techniques in a safe, controlled space. Train smarter, stay longer, and arrive prepared for depth.","image":"/assets/06_hyperbaric_pod.jpg","alt":"Hyperbaric chamber used for Dry Dive Training","specs":["Equalization practice","Controlled environment","Diver preparation"]}
+  ],
+  "benefits": [
+    {"title":"Exercise Recovery","text":"Recovery support after training, competition, and demanding schedules."},
+    {"title":"Endurance Support","text":"Support stamina, oxygen delivery, and performance routines."},
+    {"title":"Mental Clarity","text":"A quiet, controlled session designed around rest and focus."},
+    {"title":"Relaxation & Stress Relief","text":"A comfortable environment for a guided oxygen session."},
+    {"title":"General Wellness","text":"Support recovery and overall vitality."},
+    {"title":"Healthy Aging Support","text":"A repeatable modality within a broader wellness protocol."}
+  ],
+  "firstVisit": [
+    {"title":"Safety brief","text":"Review health history and answer questions."},
+    {"title":"Orientation","text":"Learn how the chamber works and what to expect."},
+    {"title":"Compression","text":"Pressure gradually increases to 1.6 ATA."},
+    {"title":"Oxygen session","text":"Relax and breathe concentrated oxygen."},
+    {"title":"Decompression","text":"Pressure safely returns to normal."}
+  ],
+  "faqs": [
+    {"question":"What does 1.6 ATA mean?","answer":"ATA means atmospheres absolute. A 1.6 ATA session raises chamber pressure to 1.6 times normal atmospheric pressure."},
+    {"question":"What will I feel during compression?","answer":"Most people notice pressure in the ears, similar to takeoff or landing in an airplane. The Apex team explains equalization techniques and increases pressure gradually."},
+    {"question":"How long is a session?","answer":"A typical session lasts about 60–90 minutes, including compression and decompression."},
+    {"question":"What is a dry dive?","answer":"Dry Dive Training uses the chamber's controlled pressure to help divers practice equalization, build confidence, and prepare for depth without entering the water."},
+    {"question":"Does dry diving replace scuba training?","answer":"No. Dry Dive Training is a supplemental pressure-adaptation experience and does not replace formal scuba instruction, certification, or in-water training."},
+    {"question":"Who should receive medical clearance first?","answer":"Ask your doctor whether supervised 1.6 ATA hyperbaric sessions are appropriate if you have a medical condition, are receiving treatment, are pregnant, or have concerns about pressure exposure."}
+  ],
+  "ctaHeading": "Enter the chamber. Enter the next level.",
+  "ctaText": "Connect with Apex Performance & Recovery to explore supervised 1.6 ATA sessions or Dry Dive Training in Bohemia."
+}

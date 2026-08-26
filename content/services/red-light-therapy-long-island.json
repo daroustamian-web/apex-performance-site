@@ -1,0 +1,65 @@
+{
+  "slug": "red-light-therapy-long-island",
+  "path": "/recovery/red-light-therapy-long-island",
+  "pageClass": "red-light",
+  "category": "Three Advanced Systems",
+  "navLabel": "Red Light Therapy",
+  "title": "Red Light Therapy on Long Island | 3 Advanced Systems | Apex",
+  "metaDescription": "Experience three advanced red light systems at Apex Performance & Recovery: TheraLight 360, MedWave + HyperVibe, and InfraBaldan 3.0. Personalized for recovery, performance, contouring, and metabolic goals.",
+  "h1": "Red Light Therapy in <em>Bohemia, Long Island</em>",
+  "heroCopy": "Red light, redefined. Three advanced systems. One Apex experience—selected around recovery, performance, contouring, and metabolic goals.",
+  "heroImage": "/assets/joe-red-light-page-background.webp",
+  "pageBackground": "/assets/joe-red-light-page-background.webp",
+  "pageBackgroundMobile": "/assets/joe-red-light-page-background-640.webp",
+  "primaryCta": "Book Your Red Light Experience",
+  "secondaryCta": "Explore the Systems",
+  "secondaryHref": "#systems",
+  "metrics": [
+    {"value":"3","label":"Distinct systems"},
+    {"value":"360°","label":"Full-body coverage"},
+    {"value":"635 nm","label":"Focused wavelength"},
+    {"value":"1","label":"Personalized strategy"}
+  ],
+  "introKicker": "One light does not fit all",
+  "introHeading": "Choose the right light. Elevate every result.",
+  "introBody": [
+    "Apex offers three different red light experiences because different systems are built for different outcomes. Your goals determine the equipment, sequence, and protocol.",
+    "All three systems are also available within the Superhuman Protocol depending on your specific goals."
+  ],
+  "sequenceHeading": "Three systems. Three distinct jobs.",
+  "sequence": [
+    {"number":"01 · Full body","title":"TheraLight 360","text":"Premium full-body photobiomodulation with calibrated red and near-infrared wavelengths."},
+    {"number":"02 · Targeted","title":"MedWave + HyperVibe","text":"Focused 635 nm red light paired with whole-body vibration and metabolic activation."},
+    {"number":"03 · Intelligent exercise","title":"InfraBaldan 3.0","text":"Infrared, muscle reactivation, and guided movement in one futuristic system."}
+  ],
+  "systems": [
+    {"label":"System 01 · TheraLight 360","title":"The pinnacle of full-body photobiomodulation","text":"TheraLight 360 surrounds your body with precisely calibrated wavelengths of red and near-infrared light, delivering premium results across performance, recovery, and total well-being.","image":"/assets/theralight-360-reference.jpg","alt":"TheraLight 360 full-body red light system","specs":["Full-body exposure","Red + near-infrared","Superhuman Protocol ready"]},
+    {"label":"System 02 · MedWave + HyperVibe","title":"Target the fat. Mobilize the fuel.","text":"Clinically guided, intense red light is designed to support fat-cell activation and move it into the bloodstream, optimizing it away. Pair with the 20-minute vibrational HyperVibe to enhance lymphatic and nervous-system protocols.","image":"/assets/medwave-system.png","alt":"MedWave system paired with whole-body vibration","specs":["635 nm","505 LEDs","No heat or downtime"],"videoPlaceholder":"MedWave video coming soon","externalUrl":"https://apexperformance.medwaveproviders.com/","externalLabel":"Explore MedWave ↗"},
+    {"label":"System 03 · InfraBaldan 3.0","title":"Futuristic red light. Intelligent exercise.","text":"InfraBaldan 3.0 is a futuristic and intelligent system that combines precision-engineered red and near-infrared light, heat-wave vibration, and muscle-reactivation technology.","image":"/assets/infrabaldan_3.png","alt":"InfraBaldan 3.0 red light exercise system","specs":["Infrared heat delivery","Guided metabolic flexibility","Muscle activation"],"videoId":"KCQ40_C_Diw","videoTitle":"Weight Loss with InfraBaldan"}
+  ],
+  "benefits": [
+    {"title":"Performance","text":"Choose full-body or targeted systems around your performance goals."},
+    {"title":"Recovery","text":"Support post-training recovery and a repeatable wellness routine."},
+    {"title":"Transformation","text":"Pair light with vibration, exercise, and Apex protocols."},
+    {"title":"Cellular Energy","text":"Red light is used to support mitochondrial activity and ATP production."},
+    {"title":"Contouring","text":"MedWave combines focused light with metabolic stimulation."},
+    {"title":"Healthy Aging","text":"A personalized approach to performance and long-term wellness."}
+  ],
+  "firstVisit": [
+    {"title":"Goal review","text":"Tell us whether your focus is recovery, performance, contouring, or metabolism."},
+    {"title":"System selection","text":"We match the equipment to your objective."},
+    {"title":"Preparation","text":"A team member explains positioning and session length."},
+    {"title":"Light session","text":"Relax or move based on the selected system."},
+    {"title":"Next-step plan","text":"Review your response and choose the right cadence."}
+  ],
+  "faqs": [
+    {"question":"What is red light therapy?","answer":"Red light therapy uses specific wavelengths of visible red and near-infrared light to support cellular energy, recovery, skin rejuvenation, and metabolic activation."},
+    {"question":"Why does Apex offer three different red light systems?","answer":"Each system is designed for a different experience: TheraLight 360 for full-body photobiomodulation, MedWave + HyperVibe for focused light and metabolic vibration, and InfraBaldan 3.0 for guided exercise with infrared and muscle activation."},
+    {"question":"Which red light system is right for me?","answer":"Your Apex consultation determines the right system based on your body, objective, schedule, and whether red light is being used alone or within a larger protocol."},
+    {"question":"How long does a session take?","answer":"Session length depends on the selected system and your protocol. The Apex team will explain the timing before your first visit."},
+    {"question":"How often should I use red light therapy?","answer":"Frequency depends on the system and your recovery, performance, or transformation goals. Apex will recommend a cadence after reviewing your goals."},
+    {"question":"Can these systems be used with the Superhuman Protocol?","answer":"Yes. All three red light systems are available within the Superhuman Protocol depending on your specific goals."}
+  ],
+  "ctaHeading": "One light does not fit all.",
+  "ctaText": "Choose the right light and elevate every result. Connect with Apex to identify the best system for your goals."
+}

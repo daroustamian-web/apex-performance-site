@@ -1,0 +1,183 @@
+{
+  "_doc": "Band map for Joe's full-page design comps. Each page is sliced into horizontal bands at its natural section seams. 'art' bands render as images (Joe's design, full-bleed, unmodified). 'nav'/'footer'/'video'/'faq' bands are replaced by live HTML so they actually work. 'overlays' place real buttons on top of art; 'erase' paints out the flat buttons underneath them. All x/y/w/h are percentages of the full comp.",
+
+  "superhuman-protocol-long-island": {
+    "source": "WhatsApp Image 2026-07-30 at 08.41.29.jpeg",
+    "width": 900,
+    "height": 1600,
+    "bands": [
+      {
+        "type": "art", "from": 0, "to": 19.3, "id": "hero", "priority": true,
+        "erase": [{ "x": 2.8, "y": 16.3, "w": 32.2, "h": 2.5, "srcDy": -3.4 }],
+        "overlays": [
+          { "kind": "cta", "label": "Book Your Discovery Session", "x": 3.3, "y": 16.5, "h": 2.1, "variant": "red", "href": "#contact" }
+        ]
+      },
+      { "type": "art", "from": 19.3, "to": 28.7, "id": "three-technologies",
+        "videoInset": { "x": 2.5, "y": 19.5, "w": 43.3, "h": 8.4, "youtube": "0fil3jbGjcU", "title": "The Superhuman Protocol at Apex" } },
+      { "type": "art", "from": 28.7, "to": 35.0, "id": "sequence" },
+      { "type": "art", "from": 35.0, "to": 43.7, "id": "step-pemf", "effect": "pemf-pulse" },
+      { "type": "art", "from": 43.7, "to": 52.5, "id": "step-oxygen", "effect": "ewot-glow" },
+      { "type": "art", "from": 52.5, "to": 61.5, "id": "step-light", "effect": "red-glow" },
+      { "type": "art", "from": 61.5, "to": 68.5, "id": "why-apex" },
+      { "type": "art", "from": 68.5, "to": 79.5, "id": "who-benefits" },
+      { "type": "art", "from": 79.5, "to": 86.0, "id": "first-session" },
+      {
+        "type": "art", "from": 86.0, "to": 92.4, "id": "science",
+        "videoInset": { "x": 30.5, "y": 86.4, "w": 31.0, "h": 5.8, "youtube": "-GBbwmlmNdE", "title": "The science behind the Superhuman Protocol" }
+      },
+      {
+        "type": "art", "from": 92.4, "to": 97.5, "id": "cta-strip",
+        "_note": "painted FAQ rows, CTA and the placeholder phone (516) 123-APEX are all erased; a real accordion follows and real contact overlays sit on top",
+        "erase": [
+          { "x": 4.6, "y": 92.6, "w": 57.4, "h": 3.7 },
+          { "x": 67.2, "y": 93.9, "w": 23.6, "h": 2.2 },
+          { "x": 65.6, "y": 96.1, "w": 26.8, "h": 1.6 }
+        ],
+        "overlays": [
+          { "kind": "cta", "label": "Book Your Discovery Session", "x": 67.6, "y": 94.0, "h": 2.0, "variant": "red", "href": "#contact" },
+          { "kind": "phone", "x": 66.0, "y": 96.2, "h": 1.4 }
+        ]
+      },
+      { "type": "faq", "id": "faq" },
+      { "type": "art", "from": 97.5, "to": 100, "id": "outro" },
+      { "type": "footer" }
+    ]
+  },
+
+  "whole-body-cryotherapy-long-island": {
+    "source": "WhatsApp Image 2026-07-30 at 09.08.48.jpeg",
+    "width": 1024,
+    "height": 1536,
+    "bands": [
+      { "type": "nav" },
+      {
+        "type": "art", "from": 2.9, "to": 30.4, "id": "hero", "priority": true,
+        "erase": [{ "x": 3.3, "y": 22.2, "w": 33.0, "h": 2.5, "srcDy": -3.2 }],
+        "overlays": [
+          { "kind": "cta", "label": "Book Your First Freeze", "x": 3.7, "y": 22.4, "h": 2.1, "variant": "blue", "href": "#contact" }
+        ],
+        "effect": "cryo-mist"
+      },
+      { "type": "art", "from": 30.4, "to": 38.0, "id": "experience",
+        "videoInset": { "x": 3.6, "y": 30.6, "w": 92.8, "h": 7.2, "local": "/assets/cryoniq-experience.mp4", "title": "Cryotherapy experience at Apex" } },
+      { "type": "art", "from": 38.0, "to": 47.6, "id": "what-how" },
+      { "type": "art", "from": 47.6, "to": 61.8, "id": "three-minutes" },
+      { "type": "art", "from": 61.8, "to": 70.0, "id": "benefits" },
+      { "type": "art", "from": 70.0, "to": 78.5, "id": "who" },
+      { "type": "art", "from": 78.5, "to": 88.6, "id": "first-session" },
+      { "type": "faq", "from": 88.6, "to": 94.7, "id": "faq" },
+      {
+        "type": "art", "from": 94.7, "to": 100, "id": "outro",
+        "erase": [{ "x": 28.5, "y": 97.3, "w": 22.0, "h": 2.2, "srcDy": -2.8 }],
+        "overlays": [
+          { "kind": "cta", "label": "Book Your First Freeze", "x": 29.0, "y": 97.4, "h": 2.0, "variant": "blue", "href": "#contact" }
+        ]
+      },
+      { "type": "footer" }
+    ]
+  },
+
+  "hyperbaric-oxygen-therapy-long-island": {
+    "source": "WhatsApp Image 2026-07-30 at 10.12.03.jpeg",
+    "width": 900,
+    "height": 1600,
+    "bands": [
+      { "type": "nav" },
+      {
+        "type": "art", "from": 2.6, "to": 17.8, "id": "hero", "priority": true,
+        "erase": [{ "x": 3.4, "y": 14.4, "w": 39.5, "h": 2.3, "srcDy": -3.0 }],
+        "overlays": [
+          { "kind": "cta", "label": "Book Your First Dive", "x": 3.8, "y": 14.6, "h": 1.9, "variant": "blue", "href": "#contact" },
+          { "kind": "cta", "label": "Explore Dry Dive Training", "x": 22.5, "y": 14.6, "h": 1.9, "variant": "ghost", "href": "#dry-dive-training" }
+        ]
+      },
+      { "type": "art", "from": 17.8, "to": 22.5, "id": "experience",
+        "videoInset": { "x": 4.0, "y": 17.9, "w": 91.5, "h": 4.4, "youtube": "snjXiL2P9h8", "title": "Hyperbaric oxygen experience at Apex" } },
+      { "type": "art", "from": 22.5, "to": 29.2, "id": "what-is" },
+      { "type": "art", "from": 29.2, "to": 34.8, "id": "why-16-ata" },
+      { "type": "art", "from": 34.8, "to": 47.5, "id": "chamber-experience" },
+      {
+        "type": "art", "from": 47.5, "to": 53.5, "id": "dry-dive-training", "anchor": "dry-dive-training",
+        "erase": [{ "x": 78.0, "y": 49.6, "w": 16.0, "h": 2.0, "srcDy": -2.6 }],
+        "overlays": [
+          { "kind": "cta", "label": "Explore Dry Dive Training", "x": 78.3, "y": 49.8, "h": 1.7, "variant": "ghost-red", "href": "#contact" }
+        ]
+      },
+      { "type": "art", "from": 53.5, "to": 61.0, "id": "benefits" },
+      { "type": "art", "from": 61.0, "to": 69.5, "id": "who" },
+      { "type": "art", "from": 69.5, "to": 76.0, "id": "first-session" },
+      { "type": "art", "from": 76.0, "to": 80.5, "id": "medical-callout" },
+      { "type": "faq", "from": 80.5, "to": 85.0, "id": "faq" },
+      {
+        "type": "art", "from": 85.0, "to": 94.0, "id": "outro",
+        "erase": [{ "x": 51.6, "y": 91.8, "w": 18.0, "h": 2.1, "srcDy": -2.7 }],
+        "overlays": [
+          { "kind": "cta", "label": "Book Your First Dive", "x": 52.0, "y": 92.0, "h": 1.9, "variant": "red", "href": "#contact" }
+        ]
+      },
+      { "type": "footer" }
+    ]
+  },
+
+  "red-light-therapy-long-island": {
+    "source": "WhatsApp Image 2026-07-30 at 18.14.48.jpeg",
+    "width": 900,
+    "height": 1600,
+    "bands": [
+      { "type": "nav" },
+      {
+        "type": "art", "from": 2.2, "to": 14.8, "id": "hero", "priority": true,
+        "erase": [{ "x": 8.0, "y": 11.3, "w": 35.5, "h": 2.1, "srcDy": -2.8 }],
+        "overlays": [
+          { "kind": "cta", "label": "Explore the Systems", "x": 8.5, "y": 11.5, "h": 1.7, "variant": "ghost-red", "href": "#systems" },
+          { "kind": "cta", "label": "Book Your First Session", "x": 25.5, "y": 11.5, "h": 1.7, "variant": "ghost", "href": "#contact" }
+        ]
+      },
+      {
+        "type": "art", "from": 14.8, "to": 30.3, "id": "systems", "anchor": "systems", "effect": "red-glow",
+        "erase": [{ "x": 69.6, "y": 27.9, "w": 20.4, "h": 1.9, "srcDy": -2.5 }],
+        "videoInset": { "x": 60.5, "y": 16.0, "w": 29.0, "h": 3.9, "youtube": "0fil3jbGjcU", "title": "TheraLight 360 at Apex" },
+        "overlays": [
+          { "kind": "cta", "label": "Book Now", "x": 70.0, "y": 28.0, "h": 1.7, "variant": "ghost-red", "href": "#contact" }
+        ]
+      },
+      {
+        "type": "art", "from": 30.3, "to": 51.0, "id": "medwave", "effect": "red-glow",
+        "erase": [{ "x": 72.1, "y": 43.9, "w": 18.4, "h": 1.9, "srcDy": -2.5 }],
+        "videoInset": { "x": 6.5, "y": 47.4, "w": 50.0, "h": 3.7, "youtube": "_b4CiVcoxa4", "title": "MedWave + HyperVibe at Apex" },
+        "overlays": [
+          { "kind": "cta", "label": "Book Now", "x": 72.5, "y": 44.0, "h": 1.7, "variant": "ghost-red", "href": "#contact" },
+          { "kind": "link", "label": "Explore MedWave", "x": 72.5, "y": 46.4, "h": 1.5, "href": "https://apexperformance.medwaveproviders.com/", "external": true }
+        ]
+      },
+      {
+        "type": "art", "from": 51.0, "to": 66.5, "id": "infrabaldan", "effect": "red-glow",
+        "erase": [{ "x": 72.1, "y": 65.4, "w": 18.4, "h": 1.9, "srcDy": -2.5 }],
+        "videoInset": { "x": 52.0, "y": 53.5, "w": 42.0, "h": 9.5, "youtube": "KCQ40_C_Diw", "title": "InfraBaldan 3.0 at Apex" },
+        "overlays": [
+          { "kind": "cta", "label": "Book Now", "x": 72.5, "y": 65.5, "h": 1.7, "variant": "ghost-red", "href": "#contact" }
+        ]
+      },
+      { "type": "art", "from": 66.5, "to": 72.0, "id": "all-three" },
+      {
+        "type": "embed", "id": "medwave-portal", "anchor": "medwave-portal",
+        "src": "https://apexperformance.medwaveproviders.com/",
+        "title": "MedWave + HyperVibe provider portal",
+        "kicker": "MedWave + HyperVibe",
+        "heading": "Book directly with the MedWave provider",
+        "copy": "MedWave + HyperVibe is delivered through Apex’s external MedWave partner. Explore packages, availability, and booking in the live portal below — or open it in a new tab."
+      },
+      { "type": "faq", "from": 72.0, "to": 86.5, "id": "faq" },
+      { "type": "art", "from": 86.5, "to": 97.2, "id": "outro" },
+      {
+        "type": "art", "from": 97.2, "to": 100, "id": "bottom-bar",
+        "erase": [{ "x": 37.0, "y": 97.6, "w": 27.0, "h": 1.9, "srcDy": -1.6 }],
+        "overlays": [
+          { "kind": "cta", "label": "Book Your Red Light Experience", "x": 37.5, "y": 97.7, "h": 1.7, "variant": "ghost-red", "href": "#contact" }
+        ]
+      },
+      { "type": "footer" }
+    ]
+  }
+}

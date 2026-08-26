@@ -1,0 +1,64 @@
+{
+  "slug": "whole-body-cryotherapy-long-island",
+  "path": "/recovery/whole-body-cryotherapy-long-island",
+  "pageClass": "cryo",
+  "category": "Whole-Body Recovery",
+  "navLabel": "Whole-Body Cryotherapy",
+  "title": "Whole-Body Cryotherapy on Long Island | Apex Performance",
+  "metaDescription": "Experience supervised whole-body cryotherapy at Apex Performance & Recovery in Bohemia, Long Island. Sessions last up to 3 minutes and may support recovery, energy, circulation, and muscle comfort.",
+  "h1": "Whole-Body <em>Cryotherapy</em> on Long Island",
+  "heroCopy": "Up to three minutes. Extreme dry cold. A faster way to reset, recover, and return stronger in a fully supervised Cryoniq session.",
+  "heroImage": "/assets/joe-cryotherapy-page-background.webp",
+  "pageBackground": "/assets/joe-cryotherapy-page-background.webp",
+  "pageBackgroundMobile": "/assets/joe-cryotherapy-page-background-640.webp",
+  "heroVideoLocal": "/assets/cryoniq-experience.mp4",
+  "primaryCta": "Book Your First Freeze",
+  "secondaryCta": "How It Works",
+  "secondaryHref": "#how-it-works",
+  "metrics": [
+    {"value":"Up to 3","label":"Minutes"},
+    {"value":"Approx. -160°F","label":"Extreme dry cold"},
+    {"value":"100%","label":"Supervised"},
+    {"value":"Cryoniq","label":"Advanced technology"}
+  ],
+  "introKicker": "What is cryotherapy?",
+  "introHeading": "Three minutes that change the rest of your day.",
+  "introBody": [
+    "Whole-body cryotherapy exposes the body to a pool of extremely cold air for up to three minutes. Sessions are fully supervised and designed to be safe, fast, and part of your performance and recovery routine.",
+    "Step into extreme dry cold at approximately -160°F. Every session is efficient, controlled, and built around your schedule."
+  ],
+  "sequenceHeading": "How does it work?",
+  "sequence": [
+    {"number":"01 · Enter","title":"Step into the chamber","text":"We review your health history, provide protective gear, and guide you into the chamber."},
+    {"number":"02 · Experience","title":"Up to three minutes","text":"The chamber delivers intense dry cold while a trained team member supervises the session."},
+    {"number":"03 · Reset","title":"Exit recharged","text":"Warm back up, review how you feel, and plan the cadence that fits your goals."}
+  ],
+  "systems": [
+    {"label":"Advanced cryotechnology","title":"Precise temperature. Supervised every time.","text":"Apex uses the Cryoniq system to deliver controlled whole-body cold exposure in a professional setting. The protocol is short, repeatable, and designed for recovery routines.","image":"/assets/eq_03_cryoniq.png","alt":"Cryoniq whole-body cryotherapy chamber","specs":["Up to 3 minutes","Dry cold","Supervised session"]}
+  ],
+  "benefits": [
+    {"title":"Exercise Recovery","text":"Built for athletes and active adults after demanding work."},
+    {"title":"Energy & Alertness","text":"Many clients use cryotherapy as a fast physical reset."},
+    {"title":"Muscle & Joint Comfort","text":"Cold exposure is used in sports recovery and physiotherapy routines."},
+    {"title":"Circulation Support","text":"Cold exposure activates the body's thermoregulation response."},
+    {"title":"Performance Routines","text":"A short modality that can fit into a larger Apex protocol."},
+    {"title":"Wellness & Healthy Aging","text":"A repeatable recovery practice for active lifestyles."}
+  ],
+  "firstVisit": [
+    {"title":"Safety review","text":"We review your health history and answer questions."},
+    {"title":"Protective gear","text":"We provide gloves, socks, and slippers for your session."},
+    {"title":"Enter the chamber","text":"A team member remains with you throughout the session."},
+    {"title":"Up to three minutes","text":"Experience controlled, extremely cold dry air."},
+    {"title":"Rewarm & next steps","text":"Warm up and receive guidance for your next session."}
+  ],
+  "faqs": [
+    {"question":"What is Whole Body Cryotherapy / Full Body Cryotherapy?","answer":"Whole body cryotherapy is a treatment that exposes the client's or patient's whole body—in most cases with the exception of the head—to a pool of extremely cold air for two to three minutes. Whole-body cryotherapy is often also referred to simply as cryotherapy."},
+    {"question":"What temperature is cryotherapy?","answer":"In whole-body cryotherapy, temperatures generally range between -80°C / -110°F and -110°C / -160°F in electric machines, and between -110°C / -160°F and -160°C / -250°F for liquid-nitrogen systems. These temperatures are achieved with coolants such as liquid nitrogen or with refrigerants."},
+    {"question":"What is cryotherapy used for?","answer":"Cryotherapy is used for conditioning of the human body in sports recovery, physiotherapy, beauty, and wellness. Many clients use cryotherapy as part of their regular recovery routine."},
+    {"question":"What are the benefits of cryotherapy for athletes?","answer":"Cryotherapy boosts energy levels, speeds up recovery, and has a generally positive effect on the body."},
+    {"question":"Does cryotherapy burn fat?","answer":"Cold exposure may stimulate thermoregulation and brown-fat activity, which plays a role in heat production and energy use. However, cryotherapy is not a standalone fat-loss treatment. It is best used alongside exercise, nutrition, and other Apex recovery modalities to support a complete metabolic-health program."},
+    {"question":"What are the benefits of cryotherapy for weight loss?","answer":"Cryotherapy greatly improves the effects of exercise and, from users' experiences, can also help the user keep going by alleviating after-effects of intense activity that may otherwise reduce motivation for further exercise."}
+  ],
+  "ctaHeading": "Enter the cold. Exit recharged.",
+  "ctaText": "Connect with Apex Performance & Recovery in Bohemia to plan your first supervised whole-body cryotherapy session."
+}

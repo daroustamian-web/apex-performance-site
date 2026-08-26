@@ -1,6 +1,32 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/protocols/cryotherapy-long-island",
+      "destination": "/recovery/whole-body-cryotherapy-long-island",
+      "permanent": true
+    },
+    {
+      "source": "/protocols/cryotherapy-long-island/",
+      "destination": "/recovery/whole-body-cryotherapy-long-island",
+      "permanent": true
+    },
+    {
+      "source": "/recovery/medwave-pemf-therapy-long-island",
+      "destination": "https://apexperformance.medwaveproviders.com/",
+      "permanent": false
+    },
+    {
+      "source": "/recovery/medwave-pemf-therapy-long-island/",
+      "destination": "https://apexperformance.medwaveproviders.com/",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/blog/:slug", "destination": "/blog/post?slug=:slug" }
   ],

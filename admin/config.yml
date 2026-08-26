@@ -12,6 +12,116 @@ media_folder: "assets/blog"
 public_folder: "/assets/blog"
 
 collections:
+  - name: site_settings
+    label: Site Settings
+    files:
+      - name: contact_booking
+        label: Contact & Booking
+        file: site-config.json
+        format: json
+        fields:
+          - { label: Business Name, name: businessName, widget: string }
+          - { label: Address, name: address, widget: string }
+          - { label: Landline, name: landline, widget: string }
+          - { label: Cell, name: cell, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Default Booking URL, name: defaultBookingUrl, widget: string, required: false, hint: "Leave blank until the approved booking destination is available." }
+          - label: Service Booking URLs
+            name: serviceBookingUrls
+            widget: object
+            fields:
+              - { label: Superhuman Protocol, name: superhuman-protocol-long-island, widget: string, required: false }
+              - { label: Whole-Body Cryotherapy, name: whole-body-cryotherapy-long-island, widget: string, required: false }
+              - { label: Hyperbaric Oxygen, name: hyperbaric-oxygen-therapy-long-island, widget: string, required: false }
+              - { label: Red Light Therapy, name: red-light-therapy-long-island, widget: string, required: false }
+
+  - name: service_pages
+    label: Service Pages
+    folder: content/services
+    create: false
+    delete: false
+    extension: json
+    format: json
+    media_folder: assets
+    public_folder: /assets
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: Internal Slug, name: slug, widget: hidden }
+      - { label: Published Path, name: path, widget: hidden }
+      - { label: Page Theme, name: pageClass, widget: hidden }
+      - { label: Eyebrow, name: category, widget: string }
+      - { label: Navigation Label, name: navLabel, widget: string }
+      - { label: Google Title, name: title, widget: string }
+      - { label: Meta Description, name: metaDescription, widget: text }
+      - { label: Main Heading, name: h1, widget: string, hint: "Use <em>…</em> only for the highlighted phrase." }
+      - { label: Hero Copy, name: heroCopy, widget: text }
+      - { label: Hero Image, name: heroImage, widget: image }
+      - { label: Full-Page Background, name: pageBackground, widget: image, hint: "Artwork used across the page; section crops are controlled by the template." }
+      - { label: Mobile Full-Page Background, name: pageBackgroundMobile, widget: image, required: false, hint: "Optional optimized mobile source of the same artwork." }
+      - { label: Local Hero Video, name: heroVideoLocal, widget: string, required: false }
+      - { label: Primary CTA Label, name: primaryCta, widget: string }
+      - { label: Secondary CTA Label, name: secondaryCta, widget: string }
+      - { label: Secondary CTA Anchor, name: secondaryHref, widget: string }
+      - label: Hero Metrics
+        name: metrics
+        widget: list
+        fields:
+          - { label: Value, name: value, widget: string }
+          - { label: Label, name: label, widget: string }
+      - { label: Introduction Eyebrow, name: introKicker, widget: string }
+      - { label: Introduction Heading, name: introHeading, widget: string }
+      - { label: Introduction Paragraphs, name: introBody, widget: list, field: { label: Paragraph, name: paragraph, widget: text } }
+      - { label: Top YouTube ID, name: topVideoId, widget: string, required: false }
+      - { label: Top Video Title, name: topVideoTitle, widget: string, required: false }
+      - { label: Video Placeholder, name: videoPlaceholder, widget: string, required: false }
+      - { label: Sequence Heading, name: sequenceHeading, widget: string, required: false }
+      - label: Sequence
+        name: sequence
+        widget: list
+        fields:
+          - { label: Number / Phase, name: number, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: text, widget: text }
+      - label: Technology Sections
+        name: systems
+        widget: list
+        fields:
+          - { label: Anchor ID, name: id, widget: string, required: false }
+          - { label: Label, name: label, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: text, widget: text }
+          - { label: Legacy Reference Image, name: image, widget: image, required: false }
+          - { label: Legacy Image Alt Text, name: alt, widget: string, required: false }
+          - { label: Specifications, name: specs, widget: list, field: { label: Specification, name: specification, widget: string } }
+          - { label: YouTube ID, name: videoId, widget: string, required: false }
+          - { label: Video Title, name: videoTitle, widget: string, required: false }
+          - { label: Video Placeholder, name: videoPlaceholder, widget: string, required: false }
+          - { label: External URL, name: externalUrl, widget: string, required: false }
+          - { label: External Link Label, name: externalLabel, widget: string, required: false }
+      - label: Potential Benefits
+        name: benefits
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: text, widget: text }
+      - label: First Visit Steps
+        name: firstVisit
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: text, widget: text }
+      - { label: Bottom YouTube ID, name: bottomVideoId, widget: string, required: false }
+      - { label: Bottom Video Title, name: bottomVideoTitle, widget: string, required: false }
+      - label: FAQs
+        name: faqs
+        widget: list
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text }
+      - { label: Closing CTA Heading, name: ctaHeading, widget: string }
+      - { label: Closing CTA Copy, name: ctaText, widget: text }
+
   - name: blog
     label: Blog
     folder: content/blog
