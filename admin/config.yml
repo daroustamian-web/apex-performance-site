@@ -25,15 +25,19 @@ collections:
           - { label: Landline, name: landline, widget: string }
           - { label: Cell, name: cell, widget: string }
           - { label: Email, name: email, widget: string }
-          - { label: Default Booking URL, name: defaultBookingUrl, widget: string, required: false, hint: "Leave blank until the approved booking destination is available." }
-          - label: Service Booking URLs
-            name: serviceBookingUrls
+          - { label: Boulevard Business ID, name: boulevardBusinessId, widget: string }
+          - { label: Boulevard Location ID, name: boulevardLocationId, widget: string }
+          - { label: Default Boulevard Path, name: defaultBookingPath, widget: string, hint: "Use /cart/menu for the general booking menu." }
+          - label: Service Booking Paths
+            name: serviceBookingPaths
             widget: object
             fields:
-              - { label: Superhuman Protocol, name: superhuman-protocol-long-island, widget: string, required: false }
-              - { label: Whole-Body Cryotherapy, name: whole-body-cryotherapy-long-island, widget: string, required: false }
-              - { label: Hyperbaric Oxygen, name: hyperbaric-oxygen-therapy-long-island, widget: string, required: false }
-              - { label: Red Light Therapy, name: red-light-therapy-long-island, widget: string, required: false }
+              - { label: APEX MAX Contour Discovery, name: apex-max-contour-discovery, widget: string, required: false, hint: "Verified public Boulevard path for the exact Discovery service." }
+              - { label: InfraBaldan Discovery, name: infrabaldan-discovery, widget: string, required: false, hint: "Verified public Boulevard path for the exact Discovery service." }
+              - { label: Superhuman Protocol, name: superhuman-protocol-long-island, widget: string, required: false, hint: "Use Boulevard's path from Sharing Options → Link via your website." }
+              - { label: Whole-Body Cryotherapy, name: whole-body-cryotherapy-long-island, widget: string, required: false, hint: "Use Boulevard's path from Sharing Options → Link via your website." }
+              - { label: Hyperbaric Oxygen, name: hyperbaric-oxygen-therapy-long-island, widget: string, required: false, hint: "Use Boulevard's path from Sharing Options → Link via your website." }
+              - { label: Red Light Therapy, name: red-light-therapy-long-island, widget: string, required: false, hint: "Use Boulevard's path from Sharing Options → Link via your website." }
 
   - name: service_pages
     label: Service Pages
