@@ -1,12 +1,5 @@
 {
-  "businessName": "Apex Performance & Recovery",
-  "address": "1626 Locust Avenue, Unit 1A, Bohemia, NY 11716",
-  "landline": "631-319-1786",
   "cell": "631-730-0456",
-  "email": "kickfitbohemia@gmail.com",
-  "boulevardBusinessId": "4bfca922-761f-4393-92d2-40acc43e96ac",
-  "boulevardLocationId": "71529583-1475-4cac-9ddd-40ba388ddc41",
-  "defaultBookingPath": "/cart/menu",
   "serviceBookingPaths": {
     "apex-max-contour-discovery": "/cart/menu/Trial Services/s_bd8bb4ef-447b-467d-8352-739911bfad4e",
     "infrabaldan-discovery": "/cart/menu/Trial Services/s_37620857-b9dc-45e9-a57d-cbb3cb214d3c",
@@ -14,5 +7,12 @@
     "whole-body-cryotherapy-long-island": "/cart/menu/Trial Services/s_1fba1b7a-3d62-4b53-b792-adf7bc09fe49",
     "hyperbaric-oxygen-therapy-long-island": "/cart/menu/Trial Services/s_e96d1c01-dc64-4a57-aaf6-a9208f774b3e",
     "red-light-therapy-long-island": "/cart/menu/Trial Services"
-  }
+  },
+  "businessName": "Apex Performance & Recovery",
+  "boulevardLocationId": "71529583-1475-4cac-9ddd-40ba388ddc41",
+  "address": "1626 Locust Avenue, Unit 1A, Bohemia, NY 11716",
+  "boulevardBusinessId": "4bfca922-761f-4393-92d2-40acc43e96ac",
+  "email": "apexperformanceandrecovery@gmail.com",
+  "defaultBookingPath": "/cart/menu",
+  "landline": "631-319-1786"
 }
